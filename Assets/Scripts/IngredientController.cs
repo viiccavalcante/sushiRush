@@ -19,7 +19,7 @@ public class IngredientController : MonoBehaviour
         if (isDragging && cursor != null)
         {
              Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = 5f; // Distância da câmera até onde o cursor deve aparecer (ajuste conforme necessário)
+            mousePosition.z = 5f;
 
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePosition);
             cursor.transform.position = worldPos;
@@ -43,7 +43,7 @@ public class IngredientController : MonoBehaviour
            
             if (hit.collider.CompareTag("WoodTray"))
             {
-                Vector3 spawnPosition = hit.collider.transform.position + new Vector3(0f, 0.5f, 0f); // meio acima
+                Vector3 spawnPosition = hit.collider.transform.position + new Vector3(0f, 0.1f, 0f);
 
                 Instantiate(prefab, spawnPosition, Quaternion.identity);
             }
