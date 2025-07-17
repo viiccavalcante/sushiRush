@@ -4,8 +4,7 @@ using UnityEngine.UI;
 public class CursorController : MonoBehaviour
 {
     public static CursorController Instance;
-    public Canvas canvas;
-    public GameObject cursorImagePrefab;
+    public GameObject cursorPrefab;
 
     private void Awake()
     {
@@ -14,8 +13,8 @@ public class CursorController : MonoBehaviour
 
     public GameObject CreateCursor(Sprite sprite)
     {
-        GameObject obj = Instantiate(cursorImagePrefab, canvas.transform);
-        obj.GetComponent<Image>().sprite = sprite;
+        GameObject obj = Instantiate(cursorPrefab);
+        obj.GetComponent<SpriteRenderer>().sprite = sprite;
         return obj;
     }
 }
