@@ -5,5 +5,7 @@ public class SushiData
 {
     public GameObject prefab;
     public Sprite sprite;
+
+    //talvez adicionar o timer aqui
 }
 

@@ -6,12 +6,12 @@ using TMPro;
 public class OrdersController : MonoBehaviour
 {
     public int maxActiveOrders = 4;
-    public float timeBetweenOrders = 3f;
+    public float timeBetweenOrders = 35f;
     public Transform orders;       
     public GameObject orderPrefab;        
     public List<SushiData> sushiOptions;
     private List<GameObject> ActiveOrders = new();
-    private float timer = 0f;
+    private float timer = 32f;
 
     void Update()
     {
