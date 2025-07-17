@@ -201,11 +201,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itens:
   - sushi:
-      id: 
+      prefab: {fileID: 0}
       sprite: {fileID: 0}
     amount: 0
   - sushi:
-      id: 
+      prefab: {fileID: 0}
       sprite: {fileID: 0}
     amount: 0
 --- !u!1 &4962226803883601766
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 8888743322089710758}
   - component: {fileID: 5479762323684671118}
   m_Layer: 0
-  m_Name: Quant
+  m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 6833469759573642860}
   - component: {fileID: 8074239893414111802}
   m_Layer: 0
-  m_Name: Quant
+  m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

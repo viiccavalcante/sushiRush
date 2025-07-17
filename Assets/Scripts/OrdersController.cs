@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class OrdersController : MonoBehaviour
 {
-    public int maxActiveOrders = 3;
-    public float timeBetweenOrders = 35f;
+    public int maxActiveOrders = 4;
+    public float timeBetweenOrders = 3f;
     public Transform orders;       
     public GameObject orderPrefab;        
     public List<SushiData> sushiOptions;
@@ -14,15 +15,13 @@ public class OrdersController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("aqi");
         timer += Time.deltaTime;
 
         if (timer >= timeBetweenOrders)
         {
-            Debug.Log("dentro");
             timer = 0f;
 
-            if (ActiveOrders.Count < maxActiveOrders)
+            if (ActiveOrders.Count <= maxActiveOrders)
             {
                 CreateOrder();
             }
@@ -44,14 +43,14 @@ public class OrdersController : MonoBehaviour
                 sushisSelected.Add(sushi);
         }
 
-        int amount1 = Random.Range(1, 4);
-        int amount2 = Random.Range(1, 4);
+        int amount1 = Random.Range(1, 5);
+        int amount2 = Random.Range(1, 5);
 
         orderLine.Find("Icon").GetComponent<Image>().sprite = sushisSelected[0].sprite;
-        orderLine.Find("Amount").GetComponent<Text>().text = $"x{amount1}";
+        orderLine.Find("Amount").GetComponent<TextMeshProUGUI>().text = $"x{amount1}";
 
         orderLine2.Find("Icon").GetComponent<Image>().sprite = sushisSelected[1].sprite;
-        orderLine2.Find("Amount").GetComponent<Text>().text = $"x{amount2}";
+        orderLine2.Find("Amount").GetComponent<TextMeshProUGUI>().text = $"x{amount2}";
 
         OrderData data = newOrder.GetComponent<OrderData>();
         data.itens[0] = new OrderData.SushiOrder { sushi = sushisSelected[0], amount = amount1 };

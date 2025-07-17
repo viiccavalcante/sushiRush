@@ -1682,6 +1682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1014967055}
   - component: {fileID: 1014967056}
+  - component: {fileID: 1014967057}
   m_Layer: 0
   m_Name: Orders
   m_TagString: Untagged
@@ -1689,21 +1690,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1014967055
-Transform:
+--- !u!224 &1014967055
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014967054}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 90, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1594037290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014967056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,11 +1723,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxActiveOrders: 3
   timeBetweenOrders: 3
-  orders: {fileID: 0}
+  orders: {fileID: 1014967055}
   orderPrefab: {fileID: 2268251559906512790, guid: 5a136d4ba617c964da711ce3903f44c8, type: 3}
   sushiOptions:
-  - id: {fileID: 0}
-    sprite: {fileID: 0}
+  - prefab: {fileID: 6106423151191907446, guid: be45c2e4c0c20f840b5b9f9f1582259d, type: 3}
+    sprite: {fileID: 21300000, guid: d4a3f4e290d19a246b1966e16998583d, type: 3}
+  - prefab: {fileID: 5967650674080512037, guid: 4e4ef37a74104ad46886de1a914d32ed, type: 3}
+    sprite: {fileID: 21300000, guid: b0863e86fa3bcd34ebd96fd78b00d2e9, type: 3}
+  - prefab: {fileID: 2294838847707380737, guid: 8f3f35261b743bc4fa696a9803503536, type: 3}
+    sprite: {fileID: 21300000, guid: e048434fbe991b04b81297ab60831419, type: 3}
+  - prefab: {fileID: 5568062639002810802, guid: d4fdd35ae7541fa4894185b6dbadba56, type: 3}
+    sprite: {fileID: 21300000, guid: 11ce90555afb6f243ad4eec89be55d0a, type: 3}
+--- !u!114 &1014967057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014967054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 20
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1062033905
 GameObject:
   m_ObjectHideFlags: 0
