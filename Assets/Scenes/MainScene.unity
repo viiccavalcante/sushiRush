@@ -1609,7 +1609,7 @@ MonoBehaviour:
     name: salmon
   - prefab: {fileID: 5967650674080512037, guid: 4e4ef37a74104ad46886de1a914d32ed, type: 3}
     sprite: {fileID: 21300000, guid: b0863e86fa3bcd34ebd96fd78b00d2e9, type: 3}
-    name: tuna
+    name: red
   - prefab: {fileID: 2294838847707380737, guid: 8f3f35261b743bc4fa696a9803503536, type: 3}
     sprite: {fileID: 21300000, guid: e048434fbe991b04b81297ab60831419, type: 3}
     name: sushi

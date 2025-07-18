@@ -36,8 +36,8 @@ public class KnifeController : MonoBehaviour
 
             if (tray.ContainsNori())
             {
-                for (int i = 0; i < 6; i++)
-                    Instantiate(sushiPrefab, trayTransform.position + new Vector3(0, 0, -0.8f + i * 0.3f), Quaternion.identity);
+                for (int i = 0; i < 4; i++)
+                    Instantiate(sushiPrefab, trayTransform.position + new Vector3(0, 0, -0.8f + i * 0.5f), Quaternion.identity);
             }
             else
             {
@@ -54,8 +54,8 @@ public class KnifeController : MonoBehaviour
                     nigiriPrefab = nigiriPinkPrefab;
                 }
 
-                for (int i = 0; i < 6; i++)
-                    Instantiate(nigiriPrefab, trayTransform.position + new Vector3(0, 0, -0.8f + i * 0.3f), Quaternion.Euler(0, 90, 0));
+                for (int i = 0; i < 4; i++)
+                    Instantiate(nigiriPrefab, trayTransform.position + new Vector3(0, 0, -0.8f + i * 0.5f), Quaternion.Euler(0, 90, 0));
             }
 
             tray.ingredients.Clear();

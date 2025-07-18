@@ -36,16 +36,6 @@ public class PieceController : MonoBehaviour
             return;
         }
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            if (hit.collider.CompareTag("ExtrasTray"))
-            {
-                transform.position = hit.collider.transform.position + new Vector3(0f, 0.1f, 0f);
-                return;
-            }
-        }
-
         Destroy(gameObject);
     }
 
