@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c4654b08d4123a4187317dec0be7292, type: 3}
       insertIndex: -1
       addedObject: {fileID: -911817599801580125}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c4654b08d4123a4187317dec0be7292, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6721244458531619245}
   m_SourcePrefab: {fileID: 100100000, guid: 2c4654b08d4123a4187317dec0be7292, type: 3}
 --- !u!1 &6106423151191907446 stripped
 GameObject:
@@ -94,7 +97,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 6106423151191907446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9366d807a58f071489243016da44027a, type: 3}
+  m_Script: {fileID: 11500000, guid: d54bd1cc06d8e0042b8d55d1ea9d7129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: salmon
+  imageCursor: {fileID: 21300000, guid: d4a3f4e290d19a246b1966e16998583d, type: 3}
+  cursor: {fileID: 516347304101518098, guid: e1cb941681dcf674fb218bdddd1d9cd4, type: 3}
+  pieceName: 
+--- !u!65 &6721244458531619245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6106423151191907446}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0.05602815, z: 0.00033336878}

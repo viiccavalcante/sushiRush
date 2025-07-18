@@ -1,13 +1,10 @@
 using UnityEngine;
 
-public class IngredientController : MonoBehaviour
+public class PieceController : MonoBehaviour
 {
     public Sprite imageCursor;
-    public GameObject prefab;
     public GameObject cursor;
     private bool isDragging = false;
-    public string name = null;
-    public WoodTrayController trayController;
 
     void OnMouseDown()
     {
@@ -22,20 +19,17 @@ public class IngredientController : MonoBehaviour
     void OnMouseUp()
     {
         Utils.StopDragging(ref isDragging, ref cursor);
-       
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
         if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.collider.CompareTag("ExtrasTray"))
             {
-            
-                if (hit.collider.CompareTag("WoodTray"))
-                {
-                    trayController.AddIngredient(name);
-
-                    Vector3 spawnPosition = hit.collider.transform.position + new Vector3(0f, 0.1f, 0f);
-                    Instantiate(prefab, spawnPosition, Quaternion.identity);
-                }
+                Debug.log("aqui");
+                transform.position = hit.collider.transform.position + new Vector3(0f, 0.1f, 0f);
+                return;
             }
-    }
+        }
 
+    }
 }
