@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class KnifeController : MonoBehaviour
 {
-    public GameObject sushiPrefab;
+    public GameObject sushiPrefab;     
+    public GameObject nigiriSalmonPrefab; 
+    public GameObject nigiriPinkPrefab;
+    public GameObject nigiriRedPrefab;
     public GameObject cursor;
-    public GameObject tray;
+    public Transform trayTransform;
     public Sprite imageCursor;
     private bool isDragging = false;
 
@@ -26,27 +29,46 @@ public class KnifeController : MonoBehaviour
         }
     }
 
-    void OnMouseUp()
+    private void OnMouseUp()
     {
         isDragging = false;
         Cursor.visible = true;
-        if (cursor != null)
-            Destroy(cursor);
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (cursor != null)
         {
-            if (hit.collider.CompareTag("WoodTray"))
+            Destroy(cursor);
+        }
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("WoodTray"))
+        {
+            WoodTrayController tray = hit.collider.GetComponent<WoodTrayController>();
+            if (tray == null) return;
+
+            if (tray.ContainsNori())
             {
-                DestroyAllIngredients();
+                for (int i = 0; i < 6; i++)
+                    Instantiate(sushiPrefab, trayTransform.position + new Vector3(i * 0.3f, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                string fish = tray.GetFishType();
+                GameObject nigiriPrefab = nigiriSalmonPrefab;
+
+                if (fish == "red")
+                {
+                    nigiriPrefab = nigiriRedPrefab;
+                }
+
+                if (fish == "pink")
+                {
+                    nigiriPrefab = nigiriPinkPrefab;
+                }
 
                 for (int i = 0; i < 6; i++)
-                {
-                    Vector3 pos = tray.transform.position + new Vector3(0, 0, i * 0.5f);
-                    Instantiate(sushiPrefab, pos, Quaternion.identity);
-                }
-                
+                    Instantiate(nigiriPrefab, trayTransform.position + new Vector3(i * 0.3f, 0, 0), Quaternion.identity);
             }
+
+            tray.ClearTray();
         }
     }
     

@@ -623,8 +623,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sushiPrefab: {fileID: 2294838847707380737, guid: 8f3f35261b743bc4fa696a9803503536, type: 3}
+  nigiriSalmonPrefab: {fileID: 6106423151191907446, guid: be45c2e4c0c20f840b5b9f9f1582259d, type: 3}
+  nigiriPinkPrefab: {fileID: 5568062639002810802, guid: d4fdd35ae7541fa4894185b6dbadba56, type: 3}
+  nigiriRedPrefab: {fileID: 5967650674080512037, guid: 4e4ef37a74104ad46886de1a914d32ed, type: 3}
   cursor: {fileID: 516347304101518098, guid: e1cb941681dcf674fb218bdddd1d9cd4, type: 3}
-  tray: {fileID: 2096304493}
+  trayTransform: {fileID: 1704330272}
   imageCursor: {fileID: 21300000, guid: 22dd4b1afb319e246a681bfb71f1bb69, type: 3}
 --- !u!65 &417603078
 BoxCollider:
@@ -1088,6 +1091,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageCursor: {fileID: 21300000, guid: a2cea52ec0bca6a47848115754d8229d, type: 3}
   prefab: {fileID: 1825169943741794320, guid: 0dfcd0430d1449d4dad9a6c3c81bb77d, type: 3}
+  name: nori
+  trayController: {fileID: 2096304499}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +1913,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1832201652664309383, guid: 00ce355ed6840754c947a84837909eab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2096304496}
+    - targetCorrespondingSourceObject: {fileID: 1832201652664309383, guid: 00ce355ed6840754c947a84837909eab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2096304499}
   m_SourcePrefab: {fileID: 100100000, guid: 00ce355ed6840754c947a84837909eab, type: 3}
 --- !u!4 &1073254051 stripped
 Transform:
@@ -2038,6 +2046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageCursor: {fileID: 21300000, guid: 4e2dfbf5ed116bf4483f2736712eea64, type: 3}
   prefab: {fileID: 7749533367711679839, guid: 211991d4b3b5af640a34ebde000936b2, type: 3}
+  name: 
+  trayController: {fileID: 2096304499}
 --- !u!1 &1194358985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,6 +2591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageCursor: {fileID: 21300000, guid: 1857ee3a5ce6f954fb8ac0a14d57a3ca, type: 3}
   prefab: {fileID: 5472134353440399702, guid: 6f670fe98c3e86141a0d47dc985ccc74, type: 3}
+  name: salmon
+  trayController: {fileID: 2096304499}
 --- !u!1 &1418043563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3254,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9, y: 0.3, z: 1}
   m_Center: {x: 0, y: 0.0047370754, z: 0}
+--- !u!114 &2096304499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096304493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cce1c2f1d7c44b44be8ad3b48ecbc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients: []
 --- !u!1001 &501959744049985605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3320,6 +3345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageCursor: {fileID: 21300000, guid: 2889298ad46a83f4f92fa3df860818b0, type: 3}
   prefab: {fileID: 7443473784440187683, guid: 0a84714f7b854e748997e4999bee80a7, type: 3}
+  name: pink
+  trayController: {fileID: 2096304499}
 --- !u!1001 &2788228890745321704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3377,6 +3404,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6337080559321865927, guid: 9ce13aad87d126e4e90abd3f491c9f34, type: 3}
+      propertyPath: name
+      value: red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337080559321865927, guid: 9ce13aad87d126e4e90abd3f491c9f34, type: 3}
       propertyPath: prefab
       value: 
       objectReference: {fileID: 8972200868529997583, guid: 60214b4e3e63c7c419820c4554aeddc3, type: 3}
@@ -3384,6 +3415,10 @@ PrefabInstance:
       propertyPath: imageCursor
       value: 
       objectReference: {fileID: 21300000, guid: 703178a589419ec4db99009d939d397c, type: 3}
+    - target: {fileID: 6337080559321865927, guid: 9ce13aad87d126e4e90abd3f491c9f34, type: 3}
+      propertyPath: trayController
+      value: 
+      objectReference: {fileID: 2096304499}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -6,6 +6,8 @@ public class IngredientController : MonoBehaviour
     public GameObject prefab;
     private GameObject cursor;
     private bool isDragging = false;
+    public string name = null;
+    public WoodTrayController trayController;
 
     void OnMouseDown()
     {
@@ -43,8 +45,9 @@ public class IngredientController : MonoBehaviour
            
             if (hit.collider.CompareTag("WoodTray"))
             {
-                Vector3 spawnPosition = hit.collider.transform.position + new Vector3(0f, 0.1f, 0f);
+                trayController.AddIngredient(name);
 
+                Vector3 spawnPosition = hit.collider.transform.position + new Vector3(0f, 0.1f, 0f);
                 Instantiate(prefab, spawnPosition, Quaternion.identity);
             }
         }
