@@ -62,10 +62,9 @@ public class PieceController : MonoBehaviour
 
         foreach (RaycastResult result in results)
         {
-
             if (result.gameObject.CompareTag("OrderNote"))
             {
-                ordersController.ConsumePiece(pieceName);
+                ordersController.ConsumePiece(name);
                 Destroy(gameObject);
             
                 return true; 

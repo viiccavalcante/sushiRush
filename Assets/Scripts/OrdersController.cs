@@ -53,6 +53,7 @@ public class OrdersController : MonoBehaviour
         orderLine2.Find("Amount").GetComponent<TextMeshProUGUI>().text = $"x{amount2}";
 
         OrderData data = newOrder.GetComponent<OrderData>();
+        data.ordersController = this;
         data.itens[0] = new OrderData.SushiOrder { sushi = sushisSelected[0], amount = amount1 };
         data.itens[1] = new OrderData.SushiOrder { sushi = sushisSelected[1], amount = amount2 };
 
@@ -72,25 +73,22 @@ public class OrdersController : MonoBehaviour
     {
         return ActiveOrders;
     }
-    
-    public bool TryConsumePiece(string pieceName)
+
+    public bool ConsumePiece(string pieceName)
     {
         foreach (GameObject orderObj in ActiveOrders)
         {
             OrderData data = orderObj.GetComponent<OrderData>();
             if (data != null)
             {
-                foreach (var item in data.itens)
+                for (int i = 0; i < data.itens.Length; i++)
                 {
+                    var item = data.itens[i];
                     if (item.sushi.name == pieceName && item.amount > 0)
                     {
                         item.amount--;
-                        
+                        data.itens[i] = item;
                         data.UpdateUI();
-                        if (item.amount == 0)
-                        {
-                            Debug.Log("order finalizado");
-                        }
                         return true;
                     }
                 }
@@ -98,6 +96,4 @@ public class OrdersController : MonoBehaviour
         }
         return false;
     }
-
 }
-

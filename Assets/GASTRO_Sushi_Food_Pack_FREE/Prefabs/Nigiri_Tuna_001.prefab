@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageCursor: {fileID: 21300000, guid: b0863e86fa3bcd34ebd96fd78b00d2e9, type: 3}
   cursor: {fileID: 516347304101518098, guid: e1cb941681dcf674fb218bdddd1d9cd4, type: 3}
-  pieceName: 
+  name: red
 --- !u!65 &-2341277213227250764
 BoxCollider:
   m_ObjectHideFlags: 0
