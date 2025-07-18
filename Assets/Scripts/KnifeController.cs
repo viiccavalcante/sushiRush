@@ -38,16 +38,20 @@ public class KnifeController : MonoBehaviour
         {
             Destroy(cursor);
         }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
         if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("WoodTray"))
         {
             WoodTrayController tray = hit.collider.GetComponent<WoodTrayController>();
             if (tray == null) return;
 
+            tray.ClearTray();
+
             if (tray.ContainsNori())
             {
                 for (int i = 0; i < 6; i++)
-                    Instantiate(sushiPrefab, trayTransform.position + new Vector3(i * 0.3f, 0, 0), Quaternion.identity);
+                    Instantiate(sushiPrefab, trayTransform.position + new Vector3(0, 0, -0.8f + i * 0.3f), Quaternion.identity);
             }
             else
             {
@@ -65,19 +69,9 @@ public class KnifeController : MonoBehaviour
                 }
 
                 for (int i = 0; i < 6; i++)
-                    Instantiate(nigiriPrefab, trayTransform.position + new Vector3(i * 0.3f, 0, 0), Quaternion.identity);
+                    Instantiate(nigiriPrefab, trayTransform.position + new Vector3(0, 0, -0.8f + i * 0.3f), Quaternion.Euler(0, 90, 0));
             }
-
-            tray.ClearTray();
         }
     }
     
-    void DestroyAllIngredients()
-    {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("Ingredient");
-        foreach (GameObject obj in objects)
-        {
-            Destroy(obj);
-        }
-    }
 }

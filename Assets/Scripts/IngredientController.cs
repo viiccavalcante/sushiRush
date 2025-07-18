@@ -29,28 +29,28 @@ public class IngredientController : MonoBehaviour
     }
 
     void OnMouseUp()
-{
-    isDragging = false;
-    Cursor.visible = true;
-
-    if (cursor != null)
     {
-        Destroy(cursor);
-    }
+        isDragging = false;
+        Cursor.visible = true;
 
-    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    
-    if (Physics.Raycast(ray, out RaycastHit hit))
+        if (cursor != null)
         {
-           
-            if (hit.collider.CompareTag("WoodTray"))
-            {
-                trayController.AddIngredient(name);
-
-                Vector3 spawnPosition = hit.collider.transform.position + new Vector3(0f, 0.1f, 0f);
-                Instantiate(prefab, spawnPosition, Quaternion.identity);
-            }
+            Destroy(cursor);
         }
-}
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+            
+                if (hit.collider.CompareTag("WoodTray"))
+                {
+                    trayController.AddIngredient(name);
+
+                    Vector3 spawnPosition = hit.collider.transform.position + new Vector3(0f, 0.1f, 0f);
+                    Instantiate(prefab, spawnPosition, Quaternion.identity);
+                }
+            }
+    }
 
 }

@@ -627,7 +627,7 @@ MonoBehaviour:
   nigiriPinkPrefab: {fileID: 5568062639002810802, guid: d4fdd35ae7541fa4894185b6dbadba56, type: 3}
   nigiriRedPrefab: {fileID: 5967650674080512037, guid: 4e4ef37a74104ad46886de1a914d32ed, type: 3}
   cursor: {fileID: 516347304101518098, guid: e1cb941681dcf674fb218bdddd1d9cd4, type: 3}
-  trayTransform: {fileID: 1704330272}
+  trayTransform: {fileID: 1073254051}
   imageCursor: {fileID: 21300000, guid: 22dd4b1afb319e246a681bfb71f1bb69, type: 3}
 --- !u!65 &417603078
 BoxCollider:

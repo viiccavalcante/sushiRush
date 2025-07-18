@@ -12,9 +12,13 @@ public class WoodTrayController : MonoBehaviour
 
     public void ClearTray()
     {
-        ingredients.Clear();
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Ingredient");
+        foreach (GameObject obj in objects)
+        {
+            Destroy(obj);
+        }
     }
-
+    
     public bool ContainsNori()
     {
         return ingredients.Contains("nori");
