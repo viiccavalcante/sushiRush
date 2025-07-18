@@ -57,6 +57,8 @@ public class KnifeController : MonoBehaviour
                 for (int i = 0; i < 6; i++)
                     Instantiate(nigiriPrefab, trayTransform.position + new Vector3(0, 0, -0.8f + i * 0.3f), Quaternion.Euler(0, 90, 0));
             }
+
+            tray.ingredients.Clear();
         }
     }
     

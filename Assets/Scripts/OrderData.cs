@@ -44,7 +44,6 @@ public class OrderData : MonoBehaviour
         else
             orderLine2.Find("Amount").GetComponent<TextMeshProUGUI>().text = $"x{itens[1].amount}";
 
-        // Se ambas as linhas acabaram, deleta o pedido
         if (itens[0].amount <= 0 && itens[1].amount <= 0 && ordersController != null)
         {
             ordersController.DeleteOrder(gameObject);
