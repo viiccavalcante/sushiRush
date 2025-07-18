@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ingredient
   - WoodTray
+  - ExtrasTray
   layers:
   - Default
   - TransparentFX

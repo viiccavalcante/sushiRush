@@ -132,7 +132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6947714014324888397, guid: 6fa395dceb601ff44aa5e9a02548f809, type: 3}
       propertyPath: m_Name
-      value: Box_Cardboard_Small_002
+      value: Tray
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947714014324888397, guid: 6fa395dceb601ff44aa5e9a02548f809, type: 3}
+      propertyPath: m_TagString
+      value: ExtrasTray
       objectReference: {fileID: 0}
     - target: {fileID: 7719431142191319543, guid: 6fa395dceb601ff44aa5e9a02548f809, type: 3}
       propertyPath: m_LocalScale.x
@@ -1900,7 +1904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1832201652664309383, guid: 00ce355ed6840754c947a84837909eab, type: 3}
       propertyPath: m_Name
-      value: Tray_Bamboo_Small_2_004
+      value: PrepareTray
       objectReference: {fileID: 0}
     - target: {fileID: 1832201652664309383, guid: 00ce355ed6840754c947a84837909eab, type: 3}
       propertyPath: m_TagString

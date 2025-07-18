@@ -11,33 +11,18 @@ public class IngredientController : MonoBehaviour
 
     void OnMouseDown()
     {
-        isDragging = true;
-        Cursor.visible = false;
-        cursor = CursorController.Instance.CreateCursor(imageCursor);
+        cursor = Utils.CursorOnMouseDown(ref isDragging, imageCursor);
     }
 
     void Update()
     {
-        if (isDragging && cursor != null)
-        {
-             Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = 5f;
-
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePosition);
-            cursor.transform.position = worldPos;
-        }
+        Utils.CursorUpdate(isDragging, cursor);
     }
 
     void OnMouseUp()
     {
-        isDragging = false;
-        Cursor.visible = true;
-
-        if (cursor != null)
-        {
-            Destroy(cursor);
-        }
-
+        Utils.StopDragging(ref isDragging, ref cursor);
+       
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         
         if (Physics.Raycast(ray, out RaycastHit hit))
