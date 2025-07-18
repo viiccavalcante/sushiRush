@@ -124,9 +124,10 @@ GameObject:
   - component: {fileID: 7592945673442309598}
   - component: {fileID: 4847045051345829081}
   - component: {fileID: 4303088043375900835}
+  - component: {fileID: 7162012099529528457}
   m_Layer: 0
   m_Name: OrderNote
-  m_TagString: Untagged
+  m_TagString: OrderNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,11 +204,34 @@ MonoBehaviour:
   - sushi:
       prefab: {fileID: 0}
       sprite: {fileID: 0}
+      name: 
     amount: 0
   - sushi:
       prefab: {fileID: 0}
       sprite: {fileID: 0}
+      name: 
     amount: 0
+--- !u!65 &7162012099529528457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268251559906512790}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 80, y: 90, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4962226803883601766
 GameObject:
   m_ObjectHideFlags: 0

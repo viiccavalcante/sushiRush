@@ -7,8 +7,8 @@ public class OrdersController : MonoBehaviour
 {
     public int maxActiveOrders = 4;
     public float timeBetweenOrders = 35f;
-    public Transform orders;       
-    public GameObject orderPrefab;        
+    public Transform orders;
+    public GameObject orderPrefab;
     public List<SushiData> sushiOptions;
     private List<GameObject> ActiveOrders = new();
     private float timer = 32f;
@@ -72,5 +72,32 @@ public class OrdersController : MonoBehaviour
     {
         return ActiveOrders;
     }
+    
+    public bool TryConsumePiece(string pieceName)
+    {
+        foreach (GameObject orderObj in ActiveOrders)
+        {
+            OrderData data = orderObj.GetComponent<OrderData>();
+            if (data != null)
+            {
+                foreach (var item in data.itens)
+                {
+                    if (item.sushi.name == pieceName && item.amount > 0)
+                    {
+                        item.amount--;
+                        
+                        data.UpdateUI();
+                        if (item.amount == 0)
+                        {
+                            Debug.Log("order finalizado");
+                        }
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
 }
 
